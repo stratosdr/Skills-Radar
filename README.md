@@ -113,7 +113,7 @@ Extracts the top N skills from a job description.
 
 ## Next Steps
 
-- Build and deploy the Streamlit dashboard
+- Deploy the Streamlit dashboard
 - Visualize skill frequency trends across roles
 - Expand skill detection using NLP or vector similarity
 - Add Docker support for easier deployment
