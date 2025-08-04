@@ -23,7 +23,7 @@ def clean_text(text):
     return " ".join(words)
 
 
-def clean_job_data(input_path='data/jobs_raw.csv', output_path='data/jobs_clean.csv'):
+def clean_job_data(input_path='skills-radar/data/jobs_raw.csv', output_path='skills-radar/data/jobs_clean.csv'):
     if not os.path.exists(input_path):
         print(f"❌ Input file not found: {input_path}")
         return
