@@ -58,6 +58,12 @@ skills-radar/
    http://localhost:8000/docs
    ```
 
+## Running the Servers
+
+To conveniently start both the FastAPI backend and Streamlit dashboard servers on Windows, run the provided Python script:
+
+python start_servers.py
+
 ## API Endpoints
 
 ### POST /predict
