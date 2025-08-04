@@ -23,7 +23,7 @@ def clean_text(text):
     return " ".join(words)
 
 
-def clean_job_data(input_path='skills-radar/data/jobs_raw.csv', output_path='skills-radar/data/jobs_clean.csv'):
+def clean_job_data(input_path='data/jobs_raw.csv', output_path='data/jobs_clean.csv'):
     if not os.path.exists(input_path):
         print(f"❌ Input file not found: {input_path}")
         return
@@ -31,9 +31,25 @@ def clean_job_data(input_path='skills-radar/data/jobs_raw.csv', output_path='ski
     df = pd.read_csv(input_path)
     print(f"📄 Loaded {len(df)} rows")
 
+    # Define allowed categories (updated to match actual data)
+    allowed_categories = [
+        'Data Engineer',
+        'Machine Learning', 
+        'Backend Developer',
+        'DevOps',
+        'Data Analyst',
+        'Software Engineer',
+        'Cloud Engineer',
+        'Junior Developer'
+    ]
+
+    # Filter rows based on category (keep all tech-related jobs)
+    df = df[df['category'].isin(allowed_categories)]
+
     df['clean_description'] = df['description'].apply(clean_text)
     df.to_csv(output_path, index=False)
-    print(f"✅ Cleaned data saved to: {output_path}")
+    print(f"✅ Cleaned & filtered data saved to: {output_path}")
+
 
 if __name__ == '__main__':
     clean_job_data()

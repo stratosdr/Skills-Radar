@@ -61,10 +61,10 @@ def main():
         time.sleep(1)  # small delay between calls (avoid rate-limiting)
 
     if all_jobs:
-        os.makedirs('skills-radar/data', exist_ok=True)
+        os.makedirs('data', exist_ok=True)
         df = pd.DataFrame(all_jobs)
-        df.to_csv('skills-radar/data/jobs_raw.csv', index=False)
-        print(f"✅ Saved {len(df)} jobs to skills-radar/data/jobs_raw.csv.")
+        df.to_csv('data/jobs_raw.csv', index=False)
+        print(f"✅ Saved {len(df)} jobs to data/jobs_raw.csv.")
     else:
         print("⚠️ No jobs were saved.")
 
